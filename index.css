@@ -1,3 +1,25 @@
-#heading {
-    color: red;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo {
+    width: 100px;
+}
+.nav-items {
+    ul {
+        display: flex;
+        li {
+            padding: 10px;
+            margin: 10px;
+            list-style-type: none;
+        }
+    }
 }

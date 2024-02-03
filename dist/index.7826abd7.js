@@ -2952,63 +2952,84 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "test");
-console.log(parent);
-const span = "200";
-const Title = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    children: [
-        span,
-        "Hello title"
-    ]
-}, void 0, true, {
-    fileName: "App.js",
-    lineNumber: 8,
-    columnNumber: 15
-}, undefined);
-const Child = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Hello comp"
-    }, void 0, false, {
-        fileName: "App.js",
-        lineNumber: 9,
-        columnNumber: 21
-    }, undefined);
-_c = Child;
-const Child1 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
         children: [
-            Child(),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Child, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 14,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Child, {}, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 15,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Hello comp 1"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "logo-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "logo",
+                    src: "https://png.pngtree.com/png-clipart/20220705/original/pngtree-fast-food-logo-png-image_8330083.png"
+                }, void 0, false, {
+                    fileName: "App.js",
+                    lineNumber: 7,
+                    columnNumber: 13
+                }, undefined)
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 16,
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 11,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Class"
+                        }, void 0, false, {
+                            fileName: "App.js",
+                            lineNumber: 12,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "App.js",
+                    lineNumber: 10,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 9,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 12,
+        lineNumber: 5,
         columnNumber: 5
     }, undefined);
-_c1 = Child1;
+_c = Header;
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+            fileName: "App.js",
+            lineNumber: 21,
+            columnNumber: 13
+        }, undefined)
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 20,
+        columnNumber: 9
+    }, undefined);
+};
+_c1 = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Child1, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 21,
+    lineNumber: 27,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
-$RefreshReg$(_c, "Child");
-$RefreshReg$(_c1, "Child1");
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "AppLayout");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {

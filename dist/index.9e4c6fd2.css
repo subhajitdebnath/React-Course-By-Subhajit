@@ -1,5 +1,28 @@
-#heading {
-  color: red;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items ul {
+  display: flex;
+}
+
+.nav-items ul li {
+  margin: 10px;
+  padding: 10px;
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
