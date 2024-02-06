@@ -1,0 +1,13 @@
+-- Structure
+- Header
+    - Logo
+    - Nav Items
+- Body
+    - Search box
+    - Restaurant Container
+        - Restaurant Cards
+- Footer
+    - Copyrights
+    - Links
+    - Contact
+    - Address

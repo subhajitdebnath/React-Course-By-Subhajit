@@ -1,25 +1,104 @@
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
-}
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid black;
+    margin: 0;
 }
 
-.logo {
-    width: 100px;
+body {
+    font-family: 'Arial', sans-serif;
 }
-.nav-items {
-    ul {
-        display: flex;
-        li {
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    align-items: center;
+    padding: 10px;
+
+    .header-logo {
+        .logo {
+            width: 8rem;
+            height: auto;
+            max-height: 3rem; /* Set a max height for the logo */
+        }
+    }
+
+    .nav-item-container {
+        ul {
+            display: flex;
+
+            li {
+                list-style-type: none;
+                font-size: 1.2rem;
+                margin: 10px;
+                padding: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+.body-container {
+    padding: 20px;
+
+    .search-container {
+        margin-bottom: 20px;
+
+        input {
             padding: 10px;
-            margin: 10px;
-            list-style-type: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
+    .restaurant-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .restaurant-card {
+            width: 15rem;
+            margin: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+
+            .restaurant-card-logo {
+                width: 100%;
+                height: auto;
+                max-height: 10rem; /* Set a max height for the restaurant logo */
+                border-radius: 5px;
+            }
+
+            div {
+                margin-top: 10px;
+            }
+
+            div:first-child {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            div:last-child {
+                display: flex;
+                justify-content: space-between;
+                color: #555;
+            }
         }
     }
 }
