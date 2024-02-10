@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { Image, Shimmer } from 'react-shimmer'
+import { LOADER_IMG_URL } from "../utils/constant";
 
 const Body = () => {
     // let listOfRestaurant = restList;
@@ -8,34 +8,32 @@ const Body = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
     useEffect(() => {
-        console.log("useeffect");
-
-        getData();
+        console.log("UseEffect");
+        fetchRestData();
     }, []);
 
-    const getData = async() => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-        // console.log(data);
-        const json = await data.json();
-        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-        setListOfRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    console.log("Render");
+
+    const fetchRestData = async () => {
+        // fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001").then(res => {
+        //     console.log(res);
+        // }).catch(err => {
+        //     console.log(err.message);
+        // }).finally(() => {
+        //     console.log("something else");
+        // });
+
+        const respose = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001");
+        const data = await respose.json();
+        console.log(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurant(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
-    console.log('render')
-
-    if(listOfRestaurant.length === 0) {
-        return (
-            <div className='body-container'>
-                <div className='restaurant-container'>
-                    {
-                        [1, 2, 3, 4, 5, 6].map(item => <Image src='https://source.unsplash.com/random/800x600' fallback={<Shimmer width={150} height={250} />}/>)
-                    }
-                </div>
-            </div>
-        )
-    }
-
-    return (
+    return listOfRestaurant.length === 0 ? (
+        <div className="full-width">
+            <img className='loader' src={LOADER_IMG_URL} />
+        </div>
+    ) : (
         <div className='body-container'>
             <div className='search-container'>
                 <input type='text'/>
